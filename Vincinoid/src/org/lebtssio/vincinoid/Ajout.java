@@ -16,6 +16,7 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 
 	private Button btn1;
 	private EditText nom;
+	private EditText epreuve;
 	private EditText heure;
 	private EditText nb;
 
@@ -28,7 +29,9 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 		btn1.setOnClickListener(this);
 
 		nom = (EditText) findViewById(R.id.nom);
-		
+
+		epreuve = (EditText) findViewById(R.id.epreuve);
+
 		heure = (EditText) findViewById(R.id.heure);
 
 		nb = (EditText) findViewById(R.id.nb);
@@ -53,7 +56,7 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) 
 	{
-		if(nom.getText().toString().equals("") || heure.getText().toString().equals("") 
+		if(nom.getText().toString().equals("") || epreuve.getText().toString().equals("") || heure.getText().toString().equals("") 
 				|| nb.getText().toString().equals("") || Integer.parseInt(nb.getText().toString()) > 6 )
 		{
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -72,6 +75,7 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 		{
 			Intent intent = new Intent(this, FragmentConfig.class);
 			intent.putExtra("nom", nom.getText().toString());
+			intent.putExtra("epreuve", epreuve.getText().toString());
 			intent.putExtra("heure", heure.getText().toString());
 			intent.putExtra("num", Integer.parseInt(nb.getText().toString()));
 			startActivityForResult(intent, 10);	

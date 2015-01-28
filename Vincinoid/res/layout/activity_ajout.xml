@@ -27,11 +27,32 @@
         android:text="Heure de passage :" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Epreuve :" />
+
+    <EditText
+        android:id="@+id/epreuve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/heure"
+        android:layout_centerVertical="true"
+        android:ems="10" 
+        android:inputType="textPersonName">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/epreuve"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_marginTop="18dp"
         android:text="Numéro de l&apos;élève :" />
 
@@ -64,7 +85,7 @@
         android:id="@+id/nb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/heure"
+        android:layout_alignLeft="@+id/epreuve"
         android:layout_below="@+id/textView4"
         android:layout_marginTop="14dp"
         android:ems="10"

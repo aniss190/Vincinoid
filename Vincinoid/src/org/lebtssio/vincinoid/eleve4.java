@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class eleve4 extends Fragment implements OnItemClickListener {
 
-	private TextView tvNom,tvHeure;
-	private String nom, heure;
+	private TextView tvNom,tvHeure,tvEpreuve;
+	private String nom, epreuve, heure;
 	private int num;
 
 	@Override
@@ -23,6 +23,7 @@ public class eleve4 extends Fragment implements OnItemClickListener {
 		Intent intent = getActivity().getIntent();
 		nom = intent.getExtras().getString("nom");
 		heure = intent.getExtras().getString("heure");
+		epreuve = intent.getExtras().getString("epreuve");
 		num = intent.getExtras().getInt("num");
 
 		if(num == 5)
@@ -34,6 +35,8 @@ public class eleve4 extends Fragment implements OnItemClickListener {
 			tvHeure = (TextView) view.findViewById(R.id.heure);
 			tvHeure.setText(heure);
 
+			tvEpreuve = (TextView) view.findViewById(R.id.epreuve);
+			tvEpreuve.setText(epreuve);
 		}
 		else
 		{

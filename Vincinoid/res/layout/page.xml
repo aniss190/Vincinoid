@@ -11,6 +11,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="105dp"
         android:text="" />
+    
+     <TextView
+        android:id="@+id/epreuve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="" />
      
       <TextView
         android:id="@+id/heure"
