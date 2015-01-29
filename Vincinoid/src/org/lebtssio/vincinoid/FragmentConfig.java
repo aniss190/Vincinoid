@@ -57,7 +57,9 @@ public class FragmentConfig extends ActionBarActivity {
 		// Affectation de l'adapteur au ViewPager
 		pager.setAdapter(this.mPagerAdapter);
 		pager.setCurrentItem(nb - 1);
-
+		
+		
+// A changer par un Switch...
 		if (nb == 1) { 
 			Valeurs(nom, epreuve, heure, nb);
 		}
