@@ -1,5 +1,6 @@
 package org.lebtssio.vincinoid;
 
+import repositories.AccountRepository;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,14 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
 
 public class Eleve3 extends Fragment implements OnItemClickListener {
 
 	private TextView tvNom,tvHeure;
 	private String nom, heure;
-	private int num;
+	private int id;
+	private TextView tvId;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -23,9 +25,14 @@ public class Eleve3 extends Fragment implements OnItemClickListener {
 		Intent intent = getActivity().getIntent();
 		nom = intent.getExtras().getString("nom");
 		heure = intent.getExtras().getString("heure");
-		num = intent.getExtras().getInt("num");
 
-		if(num == 4)
+
+		id = AccountRepository.getId();
+
+		tvId = (TextView) view.findViewById(R.id.tvId);
+		tvId.setText(""+id);
+		
+		if(id == 4)
 		{
 
 			tvNom = (TextView) view.findViewById(R.id.nom);
@@ -39,7 +46,7 @@ public class Eleve3 extends Fragment implements OnItemClickListener {
 		else
 		{
 			tvNom = (TextView) view.findViewById(R.id.nom);
-			tvNom.setText("Eleve non enregistrï¿½");
+			tvNom.setText("Eleve non enregistré");
 		}
 		return view;
 	}

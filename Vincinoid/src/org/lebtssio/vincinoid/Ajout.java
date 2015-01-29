@@ -1,5 +1,6 @@
 package org.lebtssio.vincinoid;
 
+import repositories.AccountRepository;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,8 +19,10 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 	private EditText nom;
 	private EditText heure;
 	private EditText nb;
-
+	private int id;
+	
 	@Override
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ajout);
@@ -37,15 +40,16 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.accueil, menu);
+		getMenuInflater().inflate(R.menu.eleve, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == R.id.action_eleve) {
+			Intent intent = new Intent(this, Eleve0.class);
+			startActivity(intent);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -53,12 +57,14 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) 
 	{
+		
+		
 		if(nom.getText().toString().equals("") || heure.getText().toString().equals("") 
 				|| nb.getText().toString().equals("") || Integer.parseInt(nb.getText().toString()) > 6 )
 		{
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle("Formulaire incorrect")
-			.setMessage("- un ou plusieurs champs vides \n- Num�ro de l'�l�ve sup�rieur � 6")
+			.setMessage("- un ou plusieurs champs vides")
 			.setCancelable(false)
 			.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int id) {
@@ -70,6 +76,10 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 		}
 		else
 		{
+			id = AccountRepository.getId();
+			id++;
+			AccountRepository.setId(id);
+			
 			Intent intent = new Intent(this, FragmentConfig.class);
 			intent.putExtra("nom", nom.getText().toString());
 			intent.putExtra("heure", heure.getText().toString());

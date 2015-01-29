@@ -3,6 +3,8 @@
 
     <string name="app_name">Vincinoid</string>
     <string name="action_settings">Settings</string>
+    <string name="action_ajout">Ajouter un élève</string> 
+    <string name="action_eleve">Liste d\'élève</string>  
     <string name="title_activity_accueil">Accueil</string>
     <string name="hello_world">Hello world!</string>
 
