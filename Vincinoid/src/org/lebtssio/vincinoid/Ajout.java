@@ -58,7 +58,7 @@ public class Ajout extends ActionBarActivity implements OnClickListener {
 		{
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle("Formulaire incorrect")
-			.setMessage("- un ou plusieurs champs vides \n- Numéro de l'élève supérieur à 6")
+			.setMessage("- un ou plusieurs champs vides \n- Numï¿½ro de l'ï¿½lï¿½ve supï¿½rieur ï¿½ 6")
 			.setCancelable(false)
 			.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int id) {

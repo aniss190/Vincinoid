@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
-public class eleve0 extends Fragment implements OnItemClickListener {
+public class Eleve4 extends Fragment implements OnItemClickListener {
 
 	private TextView tvNom,tvHeure;
 	private String nom, heure;
@@ -23,10 +23,9 @@ public class eleve0 extends Fragment implements OnItemClickListener {
 		Intent intent = getActivity().getIntent();
 		nom = intent.getExtras().getString("nom");
 		heure = intent.getExtras().getString("heure");
-		intent.getExtras().getString("epreuve");
 		num = intent.getExtras().getInt("num");
 
-		if(num == 1)
+		if(num == 5)
 		{
 
 			tvNom = (TextView) view.findViewById(R.id.nom);
@@ -39,7 +38,7 @@ public class eleve0 extends Fragment implements OnItemClickListener {
 		else
 		{
 			tvNom = (TextView) view.findViewById(R.id.nom);
-			tvNom.setText("Eleve non enregistré");
+			tvNom.setText("Eleve non enregistrï¿½");
 		}
 		return view;
 	}
